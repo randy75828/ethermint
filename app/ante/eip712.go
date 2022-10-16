@@ -145,9 +145,9 @@ func VerifySignature(
 ) error {
 	switch data := sigData.(type) {
 	case *signing.SingleSignatureData:
-		if data.SignMode != signing.SignMode_SIGN_MODE_LEGACY_AMINO_JSON {
-			return sdkerrors.Wrapf(sdkerrors.ErrNotSupported, "unexpected SignatureData %T: wrong SignMode", sigData)
-		}
+		//if data.SignMode != signing.SignMode_SIGN_MODE_LEGACY_AMINO_JSON {
+		//	return sdkerrors.Wrapf(sdkerrors.ErrNotSupported, "unexpected SignatureData %T: wrong SignMode", sigData)
+		//}
 
 		// Note: this prevents the user from sending thrash data in the signature field
 		if len(data.Signature) != 0 {
